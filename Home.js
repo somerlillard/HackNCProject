@@ -3,14 +3,6 @@ import { StyleSheet, Text, View, Image, Pressable } from 'react-native';
 import { useState } from 'react';
 
 export default function Home({navigation}) {
-    <Pressable onPress = {() => {navigation.navigate('Second')}}>
-        <Text>
-            Go To Next Page
-        </Text>
-    </Pressable>
-}
-
-export default function App() {
 
   const imgPath = require('./assets/favicon.png')
   const [count, setCount] = useState(0)
@@ -23,6 +15,9 @@ export default function App() {
       <Pressable onPress = {() => {setCount(count + 1)}}>
         <Text style = {styles.button}>This is a button!</Text>
         <Text>{count}</Text>
+      </Pressable>
+      <Pressable onPress = {() => navigation.navigate('Second')}>
+        <Text>Go To Next Page</Text>
       </Pressable>
     </View>
   );
