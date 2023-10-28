@@ -6,12 +6,7 @@ export default function Page({ navigation }) {
         <View>
             <Pressable onPress = {() => {navigation.goBack()}}>
                 <Text>
-                    Go to this page again
-                </Text>
-            </Pressable>
-            <Pressable onPress = {() => {navigation.goBack()}}>
-                <Text>
-                    Go Back to previous page.
+                    Go back to previous page.
                 </Text>
             </Pressable>
         </View>

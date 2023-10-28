@@ -1,23 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, Pressable } from 'react-native';
-import { useState } from 'react';
 
 export default function Home({navigation}) {
 
   const imgPath = require('./assets/favicon.png')
-  const [count, setCount] = useState(0)
 
   return (
     <View style = {styles.container}>
-      <Text>Hello World!!!!!!</Text>
+      <Text>TravelBuddy</Text>
       <StatusBar styl = "auto" />
       <Image source = {imgPath}/>
-      <Pressable onPress = {() => {setCount(count + 1)}}>
-        <Text style = {styles.button}>This is a button!</Text>
-        <Text>{count}</Text>
+      <Pressable onPress = {() => navigation.navigate('Flights')}>
+        <Text>Flights</Text>
       </Pressable>
-      <Pressable onPress = {() => navigation.navigate('Second')}>
-        <Text>Go To Next Page</Text>
+      <Pressable onPress = {() => navigation.navigate('Hotels')}>
+        <Text>Hotels</Text>
       </Pressable>
     </View>
   );
