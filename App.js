@@ -1,34 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, Pressable } from 'react-native';
-import { useState } from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Home from './Home';
+import Page from './Page';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
 
-  const imgPath = require('./assets/favicon.png')
-  const [count, setCount] = useState(0)
-
   return (
-    <View style = {styles.container}>
-      <Text>Hello World!!!!!!</Text>
-      <StatusBar styl = "auto" />
-      <Image source = {imgPath}/>
-      <Pressable onPress = {() => {setCount(count + 1)}}>
-        <Text style = {styles.button}>This is a button!</Text>
-        <Text>{count}</Text>
-      </Pressable>
-    </View>
-  );
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name = "Home" component = {Home} />
+        <Stack.Screen name = "Second" component = {Page}/>
+      </Stack.Navigator>
+    </NavigationContainer>
+  )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'white',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  button: {
-    borderColor: 'red', 
-    borderWidth: 1
-  }
-});
