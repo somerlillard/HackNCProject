@@ -1,7 +1,8 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from './Home';
-import Page from './Page';
+import FlightsPage from './FlightsPage';
+import HotelsPage from './HotelsPage'
 
 const Stack = createNativeStackNavigator();
 
@@ -11,8 +12,8 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name = "Home" component = {Home} />
-        <Stack.Screen name = "Flights" component = {Page}/>
-        <Stack.Screen name = "Hotels" component = {Page}/>
+        <Stack.Screen name = "Flights" component = {FlightsPage}/>
+        <Stack.Screen name = "Hotels" component = {HotelsPage}/>
       </Stack.Navigator>
     </NavigationContainer>
   )

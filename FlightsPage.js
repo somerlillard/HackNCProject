@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Pressable } from "react-native";
 
-export default function Page({ navigation }) {
+export default function FlightsPage({ navigation }) {
     return (
         <View>
             <Pressable onPress = {() => {navigation.goBack()}}>
