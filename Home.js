@@ -3,18 +3,18 @@ import { StyleSheet, Text, View, Image, Pressable } from 'react-native';
 
 export default function Home({navigation}) {
 
-  const imgPath = require('./assets/favicon.png')
+  const imgPath = require('./assets/TravelBuddyLogo.png')
 
   return (
     <View style = {styles.container}>
-      <Text>TravelBuddy</Text>
+      <Text style = {styles.text}>TravelBuddy</Text>
       <StatusBar styl = "auto" />
       <Image source = {imgPath}/>
       <Pressable onPress = {() => navigation.navigate('Flights')}>
-        <Text>Flights</Text>
+        <Text style = {styles.text}>Flights</Text>
       </Pressable>
       <Pressable onPress = {() => navigation.navigate('Hotels')}>
-        <Text>Hotels</Text>
+        <Text style = {styles.text}>Hotels</Text>
       </Pressable>
     </View>
   );
@@ -30,5 +30,8 @@ const styles = StyleSheet.create({
   button: {
     borderColor: 'red', 
     borderWidth: 1
+  },
+  text: {
+    fontSize: 30,
   }
 });
